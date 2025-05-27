@@ -54,8 +54,8 @@ flowchart TD
 ### 1. Clone the repo and install dependencies
 
 ```bash
-git clone https://github.com/emanalytic/auto-standup-agent.git
-cd auto-standup-agent
+https://github.com/Personal-AIProjects/Auto-Standup-Agent
+cd Auto-Standup-Agent
 pip install -r requirements.txt
 ```
 
@@ -69,11 +69,8 @@ Open the `config.ini` file and fill in your team details under `[members]`. This
 
 ```ini
 [members]
-Eman_github = emanalytic
-Eman_slack_id = U12345678
-
-John_github = just-building
-John_slack_id = U87654321
+Om_github = ompatil1906
+Om_slack_id = U08TQHQEHV4
 ```
 
 Add one line per user for both GitHub and Slack. IDs must match exactly.
