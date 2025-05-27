@@ -135,7 +135,7 @@ This project includes a GitHub Action that can run the agent automatically every
 ```yaml
 on:
   schedule:
-    - cron: '0 8 * * *'  # Runs every day at 4:42 PM UTC
+    - cron: '0 8 * * *'  # Runs every day at 8:00 AM UTC
   workflow_dispatch:       # Allows you to run it manually
 ```
 #### **Customizing the Trigger Time**
