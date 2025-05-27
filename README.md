@@ -135,14 +135,14 @@ This project includes a GitHub Action that can run the agent automatically every
 ```yaml
 on:
   schedule:
-    - cron: '42 16 * * *'  # Runs every day at 4:42 PM UTC
+    - cron: '0 8 * * *'  # Runs every day at 4:42 PM UTC
   workflow_dispatch:       # Allows you to run it manually
 ```
 #### **Customizing the Trigger Time**
 
 You can adjust the cron expression to change the time of day when the agent runs. For example, to make it run at 8 AM UTC, change it to:
 
-You can change the schedule timing [using this guide](https://crontab.guru/).
+You can change the schedule timing.
 
 ## Microsoft Teams Integration
 
