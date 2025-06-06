@@ -28,7 +28,13 @@ def oauth_redirect():
         "redirect_uri": SLACK_REDIRECT_URI,
     }
     response = requests.post("https://slack.com/api/oauth.v2.access", data=data)
-    return jsonify(response.json())
+    resp_json = response.json()
+    # Save access token to a file if present
+    access_token = resp_json.get("access_token")
+    if access_token:
+        with open("slack_access_token.txt", "w") as f:
+            f.write(access_token)
+    return jsonify(resp_json)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

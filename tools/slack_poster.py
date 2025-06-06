@@ -6,7 +6,13 @@ import os
 config = Config()
 class SlackPoster:
     def __init__(self):
-        self.slack_token = os.getenv("SLACK_BOT_TOKEN")
+        # Try to load the latest Slack access token from file, fallback to env var
+        token_path = os.path.join(os.path.dirname(__file__), "slack_access_token.txt")
+        if os.path.exists(token_path):
+            with open(token_path, "r") as f:
+                self.slack_token = f.read().strip()
+        else:
+            self.slack_token = os.getenv("SLACK_BOT_TOKEN")
         self.slack_channel = config.get('settings', 'slack_channel')
         self.slack_client = WebClient(token=self.slack_token)
 
