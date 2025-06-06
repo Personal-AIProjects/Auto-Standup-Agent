@@ -21,6 +21,7 @@ def install():
     return redirect(slack_auth_url)
 
 @app.route("/slack/oauth_redirect")
+from flask import redirect
 def oauth_redirect():
     code = request.args.get("code")
     if not code:
@@ -34,12 +35,16 @@ def oauth_redirect():
     response = requests.post("https://slack.com/api/oauth.v2.access", data=data)
     resp_json = response.json()
 
-    # Save access token to a file
     access_token = resp_json.get("access_token")
     if access_token:
         with open("slack_access_token.txt", "w") as f:
             f.write(access_token)
-    return jsonify(resp_json)
+        # Redirect to Slack success URL
+        return redirect("https://slack.com/app_redirect")  # or any Slack confirmation URL
+
+    # If error, redirect to Slack error page or show a message
+    return "OAuth failed, please try again.", 400
+
 
 @app.route("/run-standup", methods=["GET"])
 def run_standup():
