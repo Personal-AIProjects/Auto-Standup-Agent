@@ -164,7 +164,7 @@ Make sure the required environment variables are available. You can use a `.env`
 
 ## Example Slack Output
 
-![image](https://github.com/user-attachments/assets/c792ada8-eb8e-4692-b99a-67fb66d409f8)
+![image](./demo/demo.png)
 
 ---
 
