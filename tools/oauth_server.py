@@ -1,13 +1,14 @@
 import os
 from flask import Flask, redirect, request, jsonify
 import requests
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 load_dotenv()
 
-SLACK_CLIENT_ID = os.env.get("SLACK_CLIENT_ID")
-SLACK_CLIENT_SECRET = os.env.get("SLACK_CLIENT_SECRET")
-SLACK_REDIRECT_URI = os.env.get("SLACK_REDIRECT_URI")
+SLACK_CLIENT_ID = os.environ.get("SLACK_CLIENT_ID")
+SLACK_CLIENT_SECRET = os.environ.get("SLACK_CLIENT_SECRET")
+SLACK_REDIRECT_URI = os.environ.get("SLACK_REDIRECT_URI")
 
 @app.route("/slack/install")
 def install():
