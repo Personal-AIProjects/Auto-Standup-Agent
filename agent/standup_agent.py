@@ -92,6 +92,6 @@ class AutoStandupAgent:
                 else:
                     raise Exception("Failed to format standup.")
 
-if __name__ == "__main__":
+def run_standup_agent():
     agent = AutoStandupAgent()
-    print(agent.run())
+    return agent.run()
