@@ -164,7 +164,7 @@ Make sure the required environment variables are available. You can use a `.env`
 
 ## Example Slack Output
 
-![image](demo/Screenshot 2025-05-30 120845.png)
+![image](./demo/Screenshot 2025-05-30 120845.png)
 
 ---
 
