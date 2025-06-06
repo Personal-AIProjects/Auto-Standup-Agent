@@ -83,7 +83,7 @@ Also in `config.ini`, set the language model you’re using under `[settings]`:
 
 ```ini
 [settings]
-model = llama3-70b-8192
+model = llama3.3-70b-versatile
 ```
 Update the slack channel you want to post the message
 ```ini
