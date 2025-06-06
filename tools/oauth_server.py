@@ -21,7 +21,6 @@ def install():
     return redirect(slack_auth_url)
 
 @app.route("/slack/oauth_redirect")
-from flask import redirect
 def oauth_redirect():
     code = request.args.get("code")
     if not code:
